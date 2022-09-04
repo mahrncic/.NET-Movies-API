@@ -2,6 +2,6 @@
 {
     public class MovieResult 
     {
-        public List<Movie>? Movies { get; set; }
+        public ICollection<Movie>? Movies { get; set; }
     }
 }
