@@ -8,9 +8,9 @@ namespace Movies.Application.Mapping
     {
         public MappingProfile()
         {
-            CreateMap<Trailer, TrailerDto>();
-            CreateMap<Movie, MovieDto>();
-            CreateMap<MovieResult, MovieResultDto>();
+            CreateMap<Trailer, TrailerDto>().ReverseMap();
+            CreateMap<Movie, MovieDto>().ReverseMap();
+            CreateMap<MovieResult, MovieResultDto>().ReverseMap();
         }
     }
 }

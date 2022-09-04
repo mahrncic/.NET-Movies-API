@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Imdb.External\DataProvider.External.csproj" />
     <ProjectReference Include="..\Movies.Application\Movies.Application.csproj" />
   </ItemGroup>
 

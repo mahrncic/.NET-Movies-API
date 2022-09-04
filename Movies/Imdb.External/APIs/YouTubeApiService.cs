@@ -26,7 +26,12 @@ namespace DataProvider.External.APIs
             var searchRequest = GetYouTubeRequest(movieName);
             var response = await searchRequest.ExecuteAsync();
 
-            return null;
+            var trailers = response.Items.Select(x => new Trailer()
+            {
+                Id = x.Id.VideoId,
+            }).ToList();
+
+            return trailers;
         }
 
         private SearchResource.ListRequest GetYouTubeRequest(string movieName)

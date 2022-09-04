@@ -1,3 +1,4 @@
+using DataProvider.External;
 using Microsoft.OpenApi.Models;
 using Movies.Application.Config;
 
@@ -11,6 +12,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.ConfigureApplicationServices();
+builder.Services.ConfigureInfrastructureServices(builder.Configuration);
 
 builder.Services.AddCors(o =>
 {
@@ -29,7 +31,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseCors("CorsPolicy");

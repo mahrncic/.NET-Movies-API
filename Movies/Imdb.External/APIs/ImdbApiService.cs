@@ -15,9 +15,16 @@ namespace DataProvider.External.APIs
 
         public async Task<ICollection<Movie>> GetMovies(string keyword)
         {
-            var movies = await _imdbApi.SearchMovieAsync(keyword);
+            var response = await _imdbApi.SearchMovieAsync(keyword);
 
-            return null;
+            var movies = response.Results.Select(x => new Movie()
+            {
+                Id = x.Id,
+                ImageUrl = x.Image,
+                Title = x.Title
+            }).ToList();
+
+            return movies;
         }
     }
 }
