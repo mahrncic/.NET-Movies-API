@@ -1,4 +1,7 @@
 ﻿namespace Movies.Domain
 {
-    public record MovieResult (List<Movie> Movies);
+    public class MovieResult 
+    {
+        public List<Movie>? Movies { get; set; }
+    }
 }
