@@ -1,9 +1,9 @@
-﻿using Movies.Application.DTOs;
+﻿using Movies.Domain;
 
 namespace Movies.Application.Contracts
 {
     public interface IMovieProvider
     {
-        Task<MovieResultDto> Get(string keyword);
+        Task<MovieResult> Get(string keyword);
     }
 }
